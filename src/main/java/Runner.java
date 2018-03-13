@@ -7,6 +7,7 @@ public class Runner {
     public static void main(String[] args) {
 
         Folder folder1 = new Folder("Root");
+        DBHelper.save(folder1);
 
         File file1 = new File("ReadMe", "txt", 512, folder1);
         DBHelper.save(file1);
