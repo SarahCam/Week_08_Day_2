@@ -1,7 +1,10 @@
 package models;
 
+import db.DBHelper;
+
 import javax.persistence.*;
 import java.util.Set;
+import java.util.List;
 
 @Entity
 @Table(name="folders")
@@ -46,4 +49,5 @@ public class Folder {
     public void setFiles(Set<File> files) {
         this.files = files;
     }
+
 }
