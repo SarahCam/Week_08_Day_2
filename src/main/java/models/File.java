@@ -11,6 +11,21 @@ public class File {
     public File() {
     }
 
+    public File(String name, String extension, int size, Folder folder) {
+        this.name = name;
+        this.extension = extension;
+        this.size = size;
+        this.folder = folder;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
