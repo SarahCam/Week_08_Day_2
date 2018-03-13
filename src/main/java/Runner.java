@@ -11,6 +11,8 @@ public class Runner {
         Folder folder1 = new Folder("Root");
         DBHelper.save(folder1);
 
+        List<Folder> folders = DBHelper.getAll(Folder.class);
+
         File file1 = new File("ReadMe", "txt", 512, folder1);
         DBHelper.save(file1);
         File file2 = new File("Game", "java", 1024, folder1);
