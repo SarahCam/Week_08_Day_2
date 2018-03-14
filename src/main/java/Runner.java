@@ -9,7 +9,10 @@ public class Runner {
 
     public static void main(String[] args) {
 
-        Folder folder1 = new Folder("Root");
+        Owner owner1 = new Owner("Sarah", "SSS");
+        DBHelper.save(owner1);
+
+        Folder folder1 = new Folder("Root", owner1);
         DBHelper.save(folder1);
 
         List<Folder> folders = DBHelper.getAll(Folder.class);
@@ -20,9 +23,6 @@ public class Runner {
         DBHelper.save(file2);
         File file3 = new File("Test", "xml", 1024, folder1);
         DBHelper.save(file3);
-
-        Owner owner1 = new Owner("Sarah", "SSS");
-        DBHelper.save(owner1);
 
         file2.setExtension("rb");
         DBHelper.update(file2);

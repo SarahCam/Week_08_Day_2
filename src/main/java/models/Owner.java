@@ -1,6 +1,7 @@
 package models;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name="owners")
@@ -9,6 +10,7 @@ public class Owner {
     private int id;
     private String name;
     private String userName;
+    private Set<Folder> folders;
 
     public Owner() {
     }
@@ -45,5 +47,14 @@ public class Owner {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    @OneToMany(mappedBy="owner", fetch = FetchType.EAGER)
+    public Set<Folder> getFolders() {
+        return folders;
+    }
+
+    public void setFolders(Set<Folder> folders) {
+        this.folders = folders;
     }
 }
