@@ -106,4 +106,13 @@ public class DBHelper {
         return results;
     }
 
+    public static List<Folder> getAllFolders(Owner owner){
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<Folder> results = null;
+        Criteria cr = session.createCriteria(Folder.class);
+        cr.add(Restrictions.eq("owner", owner));
+        results = getList(cr);
+        return results;
+    }
+
 }

@@ -33,5 +33,7 @@ public class Runner {
 
         List<File> files3 = DBHelper.getAllFiles(folder1);
 
+        List<Folder> folders1 = DBHelper.getAllFolders(owner1);
+
     }
 }
