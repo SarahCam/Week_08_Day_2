@@ -111,6 +111,7 @@ public class DBHelper {
         List<Folder> results = null;
         Criteria cr = session.createCriteria(Folder.class);
         cr.add(Restrictions.eq("owner", owner));
+        cr.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
         results = getList(cr);
         return results;
     }
