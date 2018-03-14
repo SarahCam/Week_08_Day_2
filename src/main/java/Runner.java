@@ -1,6 +1,7 @@
 import db.DBHelper;
 import models.Folder;
 import models.File;
+import models.Owner;
 
 import java.util.List;
 
@@ -19,6 +20,9 @@ public class Runner {
         DBHelper.save(file2);
         File file3 = new File("Test", "xml", 1024, folder1);
         DBHelper.save(file3);
+
+        Owner owner1 = new Owner("Sarah", "SSS");
+        DBHelper.save(owner1);
 
         file2.setExtension("rb");
         DBHelper.update(file2);

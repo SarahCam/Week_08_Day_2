@@ -3,7 +3,7 @@ package models;
 import javax.persistence.*;
 
 @Entity
-@Table(name="files")
+@Table(name="owners")
 public class Owner {
 
     private int id;
